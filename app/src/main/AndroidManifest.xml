@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.coolweather.andriod">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -18,6 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".WeatherActivity" />
+
+        <service
+            android:name=".Service"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

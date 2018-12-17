@@ -39,23 +39,14 @@ import okhttp3.Response;
 
 public class ChooseAreaFragment  extends Fragment{
     private static final String TAG = "ChooseAreaFragment";
-
     public static final int LEVEL_PROVINCE = 0;
-
     public static final int LEVEL_CITY = 1;
-
     public static final int LEVEL_COUNTY = 2;
-
     private ProgressDialog progressDialog;
-
     private TextView titleText;
-
     private Button backButton;
-
     private ListView listView;
-
     private ArrayAdapter<String> adapter;
-
     private List<String> dataList = new ArrayList<>();
     private List<Province> provinceList;
     private List<City> cityList;
@@ -96,7 +87,7 @@ public class ChooseAreaFragment  extends Fragment{
                     } else if (getActivity() instanceof WeatherActivity) {
                         WeatherActivity activity = (WeatherActivity) getActivity();
                        activity.drawerLayout.closeDrawers();
-//                       activity.swipeRefresh.setRefreshing(true);
+                       activity.swipeRefresh.setRefreshing(true);
                        activity.requestWeather(weatherId);
                     }
                 }
@@ -133,7 +124,6 @@ public class ChooseAreaFragment  extends Fragment{
     }
 
     //查询选中省内所有的市，优先从数据库查询，如果没有查询到再去服务器上查询。
-
     private void queryCities() {
         titleText.setText(selectedProvince.getProvinceName());
         backButton.setVisibility(View.VISIBLE);
